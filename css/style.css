@@ -1,0 +1,78 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  grid-area: header;
+  background-color: #f1c40f;
+}
+
+.main {
+  grid-area: main;
+  background-color: #3498db;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #e74c3c;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #2ecc71;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #34495e;
+}
+
+.container {
+  display: grid;
+  padding: 5px;
+  background-color: aqua;
+  text-align: center;
+
+  /* Mismo tamaño */
+  /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
+  /* grid-template-rows: repeat(4, minmax(0, 50px)); */
+
+  /* Tamaños diferentes */
+
+  /* grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line]; */
+
+  /* grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start]; */
+  /* grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end]; */
+
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(4, 100px); */
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "main main main sidebar"
+    "footer footer footer footer";
+}
+
+.item {
+  /* margin: auto; */
+  text-align: center;
+  vertical-align: middle;
+}
+
+.item:nth-child(odd) {
+  background-color: blue;
+  /* border: 1px solid #000; */
+  /* padding: 2px; */
+}
+
+.item:nth-child(even) {
+  background-color: blueviolet;
+  /* border: 1px solid #000; */
+  /* padding: 2px; */
+}
